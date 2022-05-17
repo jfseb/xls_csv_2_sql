@@ -1,0 +1,71 @@
+{
+  "name": "xls_csv_2_sql",
+  "version": "1.0.0",
+  "description": "Generate SQL Insert script from xls(xml) or csv files",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "build": "gulp && tsc",
+    "prestart": "npm run build",
+    "run": "node js\\index.js",
+    "full": "gulp tsc && node js\\extractBIDB.js && node js\\extractACSN.js &&  node js\\extractYULI.js && node js\\extractHRIS.js && node js\\extractCFOD.js && node js\\extractODMM.js node js\\extractWSPC.js && node js\\extractODV2.js && node js\\splitEntityFields.js && node js\\makeModelTemplate.js && node js\\makeAllV.js",
+    "start": "node js\\index.js",
+    "coverage": "jest --coverage",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfseb/xsl_csv_2_sql.git"
+  },
+  "keywords": [
+    "excel",
+    "csv",
+    "SQL Server"
+  ],
+  "author": "gerd.forstmann@live.de",
+  "license": "Apache 2.0",
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true,
+    "testTimeout": 1200,
+    "testPathIgnorePatterns": [
+      "node_modules/"
+    ],
+    "collectCoverageFrom": [
+      "src/*.{ts,js}",
+      "js/*.js",
+      "js/**/{!(elizabot.js),}.js"
+    ],
+    "coveragePathIgnorePatterns": [],
+    "transform": {
+      "\\.[tj]sx?$": "babel-jest"
+    }
+  },
+  "dependencies": {
+    "@sap/hana-client": "^2.7.23",
+    "argparse": "^2.0.1",
+    "lodash": "^4.17.21",
+    "msnodesqlv8": "^2.4.4",
+    "tedious": "^11.8.0",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.5",
+    "@types/lodash": "^4.14.161",
+    "@types/node": "^8.10.64",
+    "babel-jest": "^26.6.3",
+    "coveralls": "^3.0.7",
+    "eslint-plugin-jest": "^24.1.0",
+    "gulp": "^4.0.2",
+    "gulp-env": "^0.4.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-jest": "https://registry.npmjs.org/@jacobq/gulp-jest/-/gulp-jest-4.0.3-PR65.tgz",
+    "gulp-jsdoc3": "^2.0.0",
+    "gulp-run": "^1.7.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.1",
+    "gulp-watch": "^5.0.1",
+    "jest": "^26.5.2",
+    "typescript": "^4.1.3"
+  }
+}

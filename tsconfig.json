@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+     // "target": "es6",
+     "skipLibCheck": true, // avoid lodash WeakMap mismatch
+    //used to be "target": "es5",
+    // "target": "es2017",
+     // "module" : "es6", //'es2015
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "isolatedModules": false,
+    //  "jsx": "react",
+     // "watch" : true,
+      // new ^^
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "declaration": false, // TODO TRUE
+      "noImplicitAny": false,
+      "removeComments": false,
+      "noLib": false,
+      "outDir" : "js",
+      "sourceMap" : true,
+      "inlineSourceMap": true,
+      "preserveConstEnums": true,
+      "suppressImplicitAnyIndexErrors": true
+  },
+  "filesGlob": [
+      "**/*.ts",
+      "**/*.tsx",
+      "!node_modules/**"
+  ],
+  "files": [
+      "src/*.ts",
+      "src/csvToRows.ts",
+      "src/excelToRows.ts"
+  ],
+  "exclude": [
+//  "!node_modules/**"
+  ]
+}
