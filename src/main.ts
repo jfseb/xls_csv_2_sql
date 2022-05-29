@@ -11,10 +11,12 @@ import { tail } from 'lodash';
 import { sqlGOToCanonic } from './mssqlToRows';
 import { canonicToExcel } from './canonicToExcel';
 import { Console } from 'console';
+import { argv, exit } from 'process';
 
 
 var purpose = `
 ==============================
+-to SQL : Source files to SQL INSERT scripts
 
 1) Folder containing CSV files
 usage
@@ -30,7 +32,7 @@ What needs to be present:
 2) in data/myData/  a file myData.sqlDef.json with a matching table definition.
 
 If the SQLDefinition starts with a column WSNAME the name of the tab (or file) will be added as an extra column.
-If Header names are present in
+If header names are present in CSV they will be mapped
 `.replace("\n","\r\n").replace("\r","\r\n");
 //=======================================
 
@@ -70,7 +72,12 @@ function parseArgsAndRun() {
 
   parser.add_argument('--noheader', { dest : 'header', action :'store_false' });
   parser.add_argument('--huge', { dest : 'huge', action :'store_true' });
-  //parser.add_argument('--baz', { help: 'baz bar' });
+
+  // argparse does not format the description ,the pyhton formatting_class option is not available/found, workaround...
+  if ( argv.length == 2) {
+	  parser.print_help();
+	  console.log(purpose);
+  }
 
   var r = parser.parse_args();
 

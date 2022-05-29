@@ -1,0 +1,75 @@
+{
+  "tname": "DB_TBL_COL_COLLATION",
+  "cols": [
+	{
+		"cname" : "WSNAME",
+		"basetype" : "NVARCHAR",
+		"nullable": false,
+		"length" : 12,
+		"ctype": "NVARCHAR"
+	},
+		{
+		"cname" : "SERVERNAME",
+		"basetype" : "NVARCHAR",
+		"nullable": false,
+		"length" : 16,
+		"ctype": "NVARCHAR"
+	},
+	{
+		"cname" : "SERVERCOL",
+		"basetype" : "NVARCHAR",
+		"nullable": false,
+		"length" : 64,
+		"ctype": "NVARCHAR"
+	},
+	{
+		"cname" : "DB_NAME",
+		"basetype" : "NVARCHAR",
+		"nullable": false,
+		"length" : 32,
+		"ctype": "NVARCHAR"
+	},
+	{
+		"cname" : "DB_KIND",
+		"basetype" : "INT",
+		"nullable": false,
+		"length" : 64,
+		"ctype": "INT"
+	},
+	{
+		"cname" : "DBCOL",
+		"basetype" : "NVARCHAR",
+		"nullable": false,
+		"length" : 64,
+		"ctype": "NVARCHAR"
+	},
+	{
+		"cname" : "TNAME",
+		"basetype" : "NVARCHAR",
+		"nullable": false,
+		"length" : 32,
+		"ctype": "NVARCHAR"
+	},
+	{
+		"cname" : "CNAME",
+		"basetype" : "NVARCHAR",
+		"nullable": false,
+		"length" : 32,
+		"ctype": "NVARCHAR"
+	},
+	{
+		"cname" : "CID",
+		"basetype" : "INT",
+		"nullable": false,
+		"length" : 4,
+		"ctype": "INT"
+	},
+	{
+		"cname" : "CCOL",
+		"basetype" : "NVARCHAR",
+		"nullable": true,
+		"length" : 64,
+		"ctype": "NVARCHAR"
+	}
+  ]
+}
